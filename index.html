@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: Montserrat, sans-serif;
+      }
+      .carousel-caption {
+        padding-bottom: 55px;
+      }
+      .bg-1 {
+        color: black;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+      .container {
+        padding-left: 75px;
+        padding-right: 75px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      .thumbnail {
+        padding: 20px 40px 20px 40px;
+        margin: 20px;
+        border: none;
+        border-radius: 0;
+        background-color: #8eb2fa;
+      }
+      h1 {
+        font-size: 400%;
+        font-family: Montserrat, sans-serif;
+      }
+      .carousel-indicators li {
+        width: 60px;
+        height: 7px;
+        border-radius: 0%;
+        background-color: rgba(255, 255, 255, 0.5);
+        margin-left: 10px;
+        margin-right: 10px;
+        border: 0px;
+      }
+      .carousel-indicators li.active {
+        width: 60px;
+        height: 7px;
+        border-radius: 0%;
+        background-color: rgba(100, 100, 100, 0.5);
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      .button {
+        text-align: center;
+        background-color: #1c0357;
+        padding: 10px;
+        color: white;
+        font-size: 15px;
+      }
+
+      .button:hover {
+        background-color: #3d2e5e; /* Green */
+        color: white;
+      }
+
+      .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 120px;
+      }
+      .person {
+        border: 10px solid transparent;
+        margin-bottom: 25px;
+        width: 40%;
+        height: 40%;
+        opacity: 0.9;
+      }
+      .person:hover {
+        border-color: rgb(157, 150, 255, 0.4);
+      }
+      #content {
+        background-color: #150033;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        padding-left: 60px;
+        padding-right: 60px;
+        color: white;
+      }
+      #contact {
+        background-color: #150033;
+        color: white;
+        padding-top: 25px;
+        padding-bottom: 25px;
+      }
+
+      .bodyText {
+        padding-left: 15%;
+        padding-right: 15%;
+        font-family: Montserrat, sans-serif;
+      }
+      .carousel-inner {
+        height: 40%;
+      }
+      .carousel-inner img {
+        height: 40%;
+        -webkit-filter: grayscale(40%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(40%);
+      }
+      .brand {
+        transform: translateY(25%);
+      }
+      .navbar {
+        font-family: Montserrat, sans-serif;
+        background-color: #1c0357;
+        font-size: 11px !important;
+        letter-spacing: 4px;
+        opacity: 0.87;
+      }
+      .navbar li a,
+      .navbar .navbar-brand {
+        color: #d5d5d5 !important;
+      }
+      .navbar-nav li a:hover {
+        color: #fff !important;
+      }
+      .navbar-nav li.active a {
+        color: #fff !important;
+        background-color: #3d2e5e !important;
+      }
+      .navbar-default .navbar-toggle {
+        border-color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navbar-->
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <img
+            src="./Assets/ABCIC_Logo_Trans.png"
+            length="40px"
+            width="40px"
+            class="brand"
+          />
+          <a class="navbar-brand" href="./index.html">Noctem</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="./index.html">Home</a></li>
+          <li><a href="./Events.html">Events</a></li>
+          <li><a href="./Archive.html">Archive</a></li>
+          <li><a href="./Sponsors.html">Sponsors</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./register.html">Register!</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Big images-->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="./Assets/Noctem_Banner.png" />
+          <div class="carousel-caption">
+            <a href="#content" style="text-decoration:none" class="button"
+              >Learn More <span class="glyphicon glyphicon-arrow-right"></span
+            ></a>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="./Assets/NovemberBanner.png" />
+          <div class="carousel-caption">
+            <a href="#content" style="text-decoration:none" class="button"
+              >Learn More <span class="glyphicon glyphicon-arrow-right"></span
+            ></a>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="./Assets/SpringBanner.png" style="top: -20px"/>
+          <div class="carousel-caption">
+            <a href="#content" style="text-decoration:none" class="button"
+              >Learn More <span class="glyphicon glyphicon-arrow-right"></span
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <!-- Text-->
+    <div id="content" class="container-fluid">
+      <h1 class="text-center bodyText">Noctem Development</h1>
+      <h4 class="text-center bodyText"><em>Seize the Night</em></h4>
+      <h2 class="text-center bodyText">
+        We are a Non-profit Organization that is dedicated to promoting Problem
+        Solving and Creativity through Technology in the Greater Boston Area.
+      </h2>
+      <div class="bg-1">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-sm-6">
+              <div class="thumbnail">
+                <h4><strong>ABCIC</strong></h4>
+                <p>
+                  Acton Boxborough Competition of Informatics and Computation
+                </p>
+                <p>
+                  Math Competition format fusion with USACO style of problems
+                </p>
+                <p>November 9th 2019</p>
+                <a
+                  href="register.html"
+                  style="text-decoration:none"
+                  class="button center"
+                  >Learn More/Register</a
+                >
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="thumbnail">
+                <h4><strong>HackAB</strong></h4>
+                <p>
+                  The Acton Boxborough Hackathon you all have been asking for!
+                </p>
+                <p>Learnathon + Full 12 hours of Hacking + Tons of Prizes!</p>
+                <p>Spring 2020</p>
+                <a
+                  href="#content"
+                  style="text-decoration:none"
+                  class="button center"
+                  >Learn More/Register</a
+                >
+              </div>
+            </div>
+          </div>
+          <a href="events.html" style="text-decoration:none" class="button center"
+            >See More</a
+          >
+        </div>
+      </div>
+      <!-- quick bios-->
+      <!-- <div id="bios" class="container">
+        <h2 class="text-center bodyText" style="color:white">
+          <em>Run by Acton-Boxborough High School Students</em>
+        </h2>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="text-center"><strong>Alexander Sun</strong></p>
+            <br />
+            <a href="#demo" data-toggle="collapse">
+              <img
+                src="./Assets/AlexSun.jpg"
+                class="img-circle person center"
+                style="width:300px;height:300px;"
+              />
+            </a>
+            <div id="demo" class="collapse">
+              <p class="text-center">Co-founder</p>
+              <p class="text-center">Director</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <p class="text-center"><strong>Anuj Sakarda</strong></p>
+            <br />
+            <a href="#demo2" data-toggle="collapse">
+              <img
+                src="./Assets/AnujSakarda.jpg"
+                class="img-circle person center"
+                style="width:300px;height:300px;"
+              />
+            </a>
+            <div id="demo2" class="collapse">
+              <p class="text-center">Co-founder</p>
+              <p class="text-center">Head of Problem Writing</p>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <h2 class="text-center bodyText" style="color:white"><em>FAQ</em></h2>
+
+      <!-- contact -->
+      <div id="contact" class="container-fluid">
+        <h3 class="text-center"><em>Contact Us</em></h3>
+        <p class="text-center">
+          <span class="glyphicon glyphicon-map-marker"></span>Acton, MA
+        </p>
+        <p class="text-center">
+          <span class="glyphicon glyphicon-envelope"></span
+          >NoctemDevelopment@gmail.com
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

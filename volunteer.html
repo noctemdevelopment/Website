@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: Montserrat, sans-serif;
+      }
+      .brand {
+        transform: translateY(25%);
+      }
+      .navbar {
+        font-family: Montserrat, sans-serif;
+        background-color: #1c0357;
+        font-size: 11px !important;
+        letter-spacing: 4px;
+        opacity: 0.87;
+      }
+      .navbar li a,
+      .navbar .navbar-brand {
+        color: #d5d5d5 !important;
+      }
+      .navbar-nav li a:hover {
+        color: #fff !important;
+      }
+      .navbar-nav li.active a {
+        color: #fff !important;
+        background-color: #3d2e5e !important;
+      }
+      .navbar-default .navbar-toggle {
+        border-color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navbar-->
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <img
+            src="./Assets/ABCIC_Logo_Trans.png"
+            length="40px"
+            width="40px"
+            class="brand"
+          />
+          <a class="navbar-brand" href="./index.html">Noctem</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./Events.html">Events</a></li>
+          <li><a href="./Archive.html">Archive</a></li>
+          <li><a href="./Sponsors.html">Sponsors</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li class="active"><a href="./register.html">Register!</a></li>
+        </ul>
+      </div>
+    </nav>
+  </body>
+</html>

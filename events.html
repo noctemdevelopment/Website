@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script>
+      window.onload = function() {
+        let element = document.getElementsByClassName("parallax")[0];
+        element.style["background-position"] = `50% 0px`;
+        if (matchMedia) {
+          const mq = window.matchMedia("(max-width: 767px)");
+          mq.addListener(WidthChange);
+          WidthChange(mq);
+        } // media query change function
+      };
+      window.onscroll = function() {
+        let element = document.getElementsByClassName("parallax")[0];
+        var windowYOffset = window.pageYOffset;
+        console.log(windowYOffset);
+        element.style["background-position"] = `50% ${windowYOffset / 2}px`;
+        // element.style['transform'] = `rotate(${windowYOffset*4}deg)`;
+      };
+      function WidthChange(mq) {
+        let element = document.getElementsByClassName("parallax")[0];
+        let navbar = document.getElementsByClassName("navbar")[0];
+        if(mq.matches) {
+          navbar.style['opacity'] = 1;
+          element.style['margin-top'] = `${navbar.offsetHeight}px`;
+        } else {
+          navbar.style['opacity'] = 0.87;
+          element.style['margin-top'] = 0;
+        }
+      }
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      :root:before {
+        content: url("./Assets/EventBanner.png") url("./Assets/ABCICframe.png")
+          url("./Assets/ABCICrotated.png");
+        /* partial fallback */
+        background-image: url("./Assets/EventBanner.png");
+        visibility: hidden;
+        position: absolute;
+        left: -999em;
+      }
+
+      /* @media (max-width: 767px) {
+        .parallax {
+          margin-top: 265px;
+        }
+      } */
+      .parallax {
+        /* The image used */
+        background-image: url("./Assets/EventBanner.png");
+
+        /* Set a specific height */
+        height: 45vw;
+        min-height: 400px;
+
+        /* Create the parallax scrolling effect */
+        /* background-attachment: fixed; */
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+      body {
+        font-family: Montserrat, sans-serif;
+        background: #4a1757;
+      }
+      .bg-1 {
+        padding-top: 15px;
+        padding-bottom: 30px;
+      }
+      .container {
+        color: white;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        background-color: #4a1757;
+        margin-left: 0px;
+        margin-right: 0px;
+      }
+      .height100 {
+        height: 350px;
+      }
+      .bg-black {
+        color: white;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        background-color: #000;
+      }
+      .container {
+        padding-left: 75px;
+        padding-right: 75px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      h1 {
+        font-size: 400%;
+        font-family: Montserrat, sans-serif;
+      }
+
+      .button {
+        text-align: center;
+        background-color: #1c0357;
+        padding: 10px;
+        color: white;
+        font-size: 15px;
+      }
+
+      .button:hover {
+        background-color: #3d2e5e; /* Green */
+        color: white;
+      }
+
+      .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 120px;
+      }
+      .padding-0 {
+        padding-right: 0;
+        padding-left: 0;
+      }
+      #content {
+        background-color: #150033;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        padding-left: 60px;
+        padding-right: 60px;
+        color: white;
+      }
+
+      .bodyText {
+        padding-left: 15%;
+        padding-right: 15%;
+        font-family: Montserrat, sans-serif;
+        color: white;
+        font-size: 150%;
+      }
+      .bodyText1 {
+        padding-left: 15%;
+        padding-right: 15%;
+        margin-top: 20px;
+        font-family: Montserrat, sans-serif;
+        color: #a5b2c7;
+        font-size: 150%;
+      }
+      .grey {
+        -webkit-filter: grayscale(30%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(30%);
+      }
+      .brand {
+        transform: translateY(25%);
+      }
+      .navbar {
+        font-family: Montserrat, sans-serif;
+        background-color: #1c0357;
+        font-size: 11px !important;
+        letter-spacing: 4px;
+        opacity: 0.87;
+      }
+      .navbar li a,
+      .navbar .navbar-brand {
+        color: #d5d5d5 !important;
+      }
+      .navbar-nav li a:hover {
+        color: #fff !important;
+      }
+      .navbar-nav li.active a {
+        color: #fff !important;
+        background-color: #3d2e5e !important;
+      }
+      .navbar-default .navbar-toggle {
+        border-color: transparent;
+      }
+      .btn {
+        background-color: black;
+        color: white;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-left: 0px;
+        margin-bottom: 15px;
+        width: 100%;
+      }
+
+      .btn:hover {
+        background-color: white;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navbar-->
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <img
+            src="./Assets/ABCIC_Logo_Trans.png"
+            length="40px"
+            width="40px"
+            class="brand"
+          />
+          <a class="navbar-brand" href="./index.html">Noctem</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="./index.html">Home</a></li>
+          <li class="active"><a href="./Events.html">Events</a></li>
+          <li><a href="./Archive.html">Archive</a></li>
+          <li><a href="./Sponsors.html">Sponsors</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./register.html">Register!</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Big images-->
+    <div class="parallax"></div>
+    <div class="container">
+      <div class="bg-1">
+        <!-- quick bios-->
+        <h2 class="text-center bodyText">
+          We hope you can enjoy all of the events we offer, and find a place
+          where you can have fun and maybe learn a thing or two!
+        </h2>
+      </div>
+      <a href="#ABCIC" class="btn"
+        >Acton Boxborough Competition of Informatics and Computation</a
+      >
+      <a href="#HackAB" class="btn">HackAB</a>
+
+      <div class="row" id="ABCIC">
+        <div class="col-sm-6 padding-0">
+          <img src="./Assets/ABCICrotated.png" style="width:100%" />
+        </div>
+        <div class="col-sm-6 padding-0">
+          <br />
+          <p class="text-center bodyText1">
+            ABCIC - Acton Boxborough Competition of Informatics and Computation
+          </p>
+          <br />
+          <p class="text-center bodyText1">
+            A fusion of USACO problem styles, with the in-person math
+            competition format.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 padding-0 bg-1 height100">
+          <br />
+          <p class="text-center bodyText">
+            ABCIC - Acton Boxborough Competition of Informatics and Computation
+          </p>
+          <br />
+          <p class="text-center bodyText">
+            A fusion of USACO problem styles, with the in-person math
+            competition format.
+          </p>
+        </div>
+        <div class="col-sm-6 padding-0">
+          <img src="./Assets/ProblemFormat.png" style="width:100%" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 padding-0">
+          <img src="./Assets/ABCICframe.png" style="width:100%" />
+        </div>
+        <div class="col-sm-6 padding-0 height100">
+          <br />
+          <p class="text-center bodyText1">
+            ABCIC - Acton Boxborough Competition of Informatics and Computation
+          </p>
+          <br />
+          <p class="text-center bodyText1">
+            A fusion of USACO problem styles, with the in-person math
+            competition format.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 padding-0 bg-1 height100">
+          <br />
+          <p class="text-center bodyText">
+            ABCIC - Acton Boxborough Competition of Informatics and Computation
+          </p>
+          <br />
+          <p class="text-center bodyText">
+            A fusion of USACO problem styles, with the in-person math
+            competition format.
+          </p>
+        </div>
+        <div class="col-sm-6 padding-0 bg-black height100">
+          <h2
+            class="text-center bodyText"
+            style="padding-top:110px;font-size:300%"
+          >
+            Schedule
+          </h2>
+        </div>
+      </div>
+    </div>
+    <!-- contact -->
+    <div id="contact" class="container-fluid bg-1">
+      <h3 class="text-center"><em>Contact Us</em></h3>
+      <p class="text-center">
+        <span class="glyphicon glyphicon-map-marker"></span>Acton, MA
+      </p>
+      <p class="text-center">
+        <span class="glyphicon glyphicon-envelope"></span
+        >NoctemDevelopment@gmail.com
+      </p>
+    </div>
+  </body>
+</html>
