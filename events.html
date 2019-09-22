@@ -22,7 +22,7 @@
     <script>
       window.onload = function() {
         let element = document.getElementsByClassName("parallax")[0];
-        element.style["background-position"] = `50% 0px`;
+        // element.style["background-position"] = `50% 0px`;
         if (matchMedia) {
           const mq = window.matchMedia("(max-width: 767px)");
           mq.addListener(WidthChange);
@@ -39,12 +39,12 @@
       function WidthChange(mq) {
         let element = document.getElementsByClassName("parallax")[0];
         let navbar = document.getElementsByClassName("navbar")[0];
-        if(mq.matches) {
-          navbar.style['opacity'] = 1;
-          element.style['margin-top'] = `${navbar.offsetHeight}px`;
+        if (mq.matches) {
+          navbar.style["opacity"] = 1;
+          element.style["margin-top"] = `${navbar.offsetHeight}px`;
         } else {
-          navbar.style['opacity'] = 0.87;
-          element.style['margin-top'] = 0;
+          navbar.style["opacity"] = 0.87;
+          element.style["margin-top"] = 0;
         }
       }
     </script>
@@ -80,11 +80,12 @@
         /* background-attachment: fixed; */
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: center;
+        background-position: 50% 0;
       }
       body {
         font-family: Montserrat, sans-serif;
-        background: #4a1757;
+        /* background: #4a1757; */
+        background: #2f0366;
       }
       .bg-1 {
         padding-top: 15px;
@@ -94,7 +95,8 @@
         color: white;
         padding-top: 15px;
         padding-bottom: 15px;
-        background-color: #4a1757;
+        /* background-color: #4a1757; */
+        background: transparent;
         margin-left: 0px;
         margin-right: 0px;
       }
@@ -120,14 +122,14 @@
 
       .button {
         text-align: center;
-        background-color: #1c0357;
+        background-color: #3f0eb0;
         padding: 10px;
         color: white;
         font-size: 15px;
       }
 
       .button:hover {
-        background-color: #3d2e5e; /* Green */
+        background-color: #392a57; /* Green */
         color: white;
       }
 
@@ -162,7 +164,7 @@
         padding-right: 15%;
         margin-top: 20px;
         font-family: Montserrat, sans-serif;
-        color: #a5b2c7;
+        color: white;
         font-size: 150%;
       }
       .grey {
@@ -194,7 +196,7 @@
         border-color: transparent;
       }
       .btn {
-        background-color: black;
+        background-color: #1c074e;
         color: white;
         padding: 14px 28px;
         font-size: 16px;
@@ -202,11 +204,24 @@
         margin-left: 0px;
         margin-bottom: 15px;
         width: 100%;
+        box-shadow: rgba(36, 2, 70, 0.5) 0 0 3px 3px;
       }
 
       .btn:hover {
         background-color: white;
         color: black;
+        box-shadow: rgba(255, 255, 255, 1) 0 0 3px 3px;
+      }
+      .centerBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        margin-left: -50%;
+        /* margin-top: -50%; */
+      }
+      .col-sm-6 img {
+        box-shadow: rgba(36, 2, 70, 1) 0 0 5px 5px;
       }
     </style>
   </head>
@@ -226,9 +241,9 @@
         </div>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="./index.html">Home</a></li>
-          <li class="active"><a href="./Events.html">Events</a></li>
-          <li><a href="./Archive.html">Archive</a></li>
-          <li><a href="./Sponsors.html">Sponsors</a></li>
+          <li class="active"><a href="./events.html">Events</a></li>
+          <li><a href="./archive.html">Archive</a></li>
+          <li><a href="./sponsors.html">Sponsors</a></li>
           <li><a href="./about.html">About</a></li>
           <li><a href="./register.html">Register!</a></li>
         </ul>
@@ -255,15 +270,17 @@
           <img src="./Assets/ABCICrotated.png" style="width:100%" />
         </div>
         <div class="col-sm-6 padding-0">
-          <br />
-          <p class="text-center bodyText1">
-            ABCIC - Acton Boxborough Competition of Informatics and Computation
-          </p>
-          <br />
-          <p class="text-center bodyText1">
-            A fusion of USACO problem styles, with the in-person math
-            competition format.
-          </p>
+          <div class="centerBox">
+            <p class="text-center bodyText1">
+              ABCIC - Acton Boxborough Competition of Informatics and
+              Computation
+            </p>
+            <br />
+            <p class="text-center bodyText1">
+              A fusion of USACO problem styles, with the in-person math
+              competition format.
+            </p>
+          </div>
         </div>
       </div>
       <div class="row">

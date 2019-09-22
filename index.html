@@ -19,6 +19,26 @@
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script>
+      window.onload = function() {
+        if (matchMedia) {
+          const mq = window.matchMedia("(max-width: 767px)");
+          mq.addListener(WidthChange);
+          WidthChange(mq);
+        } // media query change function
+      };
+      function WidthChange(mq) {
+        let element = document.getElementById("myCarousel");
+        let navbar = document.getElementsByClassName("navbar")[0];
+        if (mq.matches) {
+          navbar.style["opacity"] = 1;
+          element.style["margin-top"] = `${navbar.offsetHeight}px`;
+        } else {
+          navbar.style["opacity"] = 0.87;
+          element.style["margin-top"] = 0;
+        }
+      }
+    </script>
     <style>
       html {
         scroll-behavior: smooth;
@@ -78,6 +98,20 @@
 
       .button:hover {
         background-color: #3d2e5e; /* Green */
+        color: white;
+      }
+
+      .button.hackab:hover {
+        /* background-color: #1c0357; /* Green */
+        */color: white;
+      }
+
+      .button.hackab:hover span {
+        transition: 0.5s;
+        display: none;
+      }
+      .button.hackab:hover:before {
+        content: "Registration is closed";
         color: white;
       }
 
@@ -167,9 +201,9 @@
         </div>
         <ul class="nav navbar-nav navbar-right">
           <li class="active"><a href="./index.html">Home</a></li>
-          <li><a href="./Events.html">Events</a></li>
-          <li><a href="./Archive.html">Archive</a></li>
-          <li><a href="./Sponsors.html">Sponsors</a></li>
+          <li><a href="./events.html">Events</a></li>
+          <li><a href="./archive.html">Archive</a></li>
+          <li><a href="./sponsors.html">Sponsors</a></li>
           <li><a href="./about.html">About</a></li>
           <li><a href="./register.html">Register!</a></li>
         </ul>
@@ -206,7 +240,7 @@
         </div>
 
         <div class="item">
-          <img src="./Assets/SpringBanner.png" style="top: -20px"/>
+          <img src="./Assets/SpringBanner.png" style="top: -20px" />
           <div class="carousel-caption">
             <a href="#content" style="text-decoration:none" class="button"
               >Learn More <span class="glyphicon glyphicon-arrow-right"></span
@@ -227,25 +261,31 @@
     </div>
     <!-- Text-->
     <div id="content" class="container-fluid">
-      <h1 class="text-center bodyText">Noctem Development</h1>
-      <h4 class="text-center bodyText"><em>Seize the Night</em></h4>
-      <h2 class="text-center bodyText">
+      <h1 class="text-center bodyText" style="margin-bottom: 0">Noctem Development</h1>
+      <h4 class="text-center bodyText" style="margin-top: 0"><em>Seize the Night</em></h4>
+      <h3 class="text-center bodyText" style="margin-top: 40px">
         We are a Non-profit Organization that is dedicated to promoting Problem
         Solving and Creativity through Technology in the Greater Boston Area.
-      </h2>
+      </h3>
+
+      <h2 class="text-center bodyText" style="margin-top: 40px"><strong>Events</strong></h1>
+
       <div class="bg-1">
         <div class="container">
           <div class="row text-center">
             <div class="col-sm-6">
               <div class="thumbnail">
                 <h4><strong>ABCIC</strong></h4>
+                <br />
                 <p>
                   Acton Boxborough Competition of Informatics and Computation
                 </p>
                 <p>
                   Math Competition format fusion with USACO style of problems
                 </p>
-                <p>November 9th 2019</p>
+                <br />
+                <h5><strong>November 9th 2019</strong></h5>
+                <br />
                 <a
                   href="register.html"
                   style="text-decoration:none"
@@ -257,64 +297,30 @@
             <div class="col-sm-6">
               <div class="thumbnail">
                 <h4><strong>HackAB</strong></h4>
+                <br />
                 <p>
                   The Acton Boxborough Hackathon you all have been asking for!
                 </p>
                 <p>Learnathon + Full 12 hours of Hacking + Tons of Prizes!</p>
-                <p>Spring 2020</p>
+                <br />
+                <h5><strong>Spring 2020</strong></h5>
+                <br />
                 <a
-                  href="#content"
-                  style="text-decoration:none"
-                  class="button center"
-                  >Learn More/Register</a
+                  style="text-decoration:none; cursor: not-allowed;"
+                  class="button hackab center"
+                  ><span>Learn More/Register</span></a
                 >
               </div>
             </div>
           </div>
-          <a href="events.html" style="text-decoration:none" class="button center"
+          <a
+            href="events.html"
+            style="text-decoration:none"
+            class="button center"
             >See More</a
           >
         </div>
       </div>
-      <!-- quick bios-->
-      <!-- <div id="bios" class="container">
-        <h2 class="text-center bodyText" style="color:white">
-          <em>Run by Acton-Boxborough High School Students</em>
-        </h2>
-        <div class="row">
-          <div class="col-sm-6">
-            <p class="text-center"><strong>Alexander Sun</strong></p>
-            <br />
-            <a href="#demo" data-toggle="collapse">
-              <img
-                src="./Assets/AlexSun.jpg"
-                class="img-circle person center"
-                style="width:300px;height:300px;"
-              />
-            </a>
-            <div id="demo" class="collapse">
-              <p class="text-center">Co-founder</p>
-              <p class="text-center">Director</p>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <p class="text-center"><strong>Anuj Sakarda</strong></p>
-            <br />
-            <a href="#demo2" data-toggle="collapse">
-              <img
-                src="./Assets/AnujSakarda.jpg"
-                class="img-circle person center"
-                style="width:300px;height:300px;"
-              />
-            </a>
-            <div id="demo2" class="collapse">
-              <p class="text-center">Co-founder</p>
-              <p class="text-center">Head of Problem Writing</p>
-            </div>
-          </div>
-        </div>
-      </div> -->
-      <h2 class="text-center bodyText" style="color:white"><em>FAQ</em></h2>
 
       <!-- contact -->
       <div id="contact" class="container-fluid">
