@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="icon" href="Assets/favicon.ico" type="image/x-icon" />
+    <title>Noctem Development</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -28,13 +30,31 @@
           mq.addListener(WidthChange);
           WidthChange(mq);
         } // media query change function
+
+        let elements = document.getElementsByClassName("col-sm-6");
+        if (elements.length != 8) alert("Please stop messing with the page!");
+        else {
+          elements[1].style["height"] = `${elements[0].clientHeight}px`;
+          elements[2].style["height"] = `${elements[3].clientHeight}px`;
+          elements[5].style["height"] = `${elements[4].clientHeight}px`;
+          elements[6].style["height"] = `${elements[7].clientHeight}px`;
+        }
       };
       window.onscroll = function() {
         let element = document.getElementsByClassName("parallax")[0];
         var windowYOffset = window.pageYOffset;
-        console.log(windowYOffset);
         element.style["background-position"] = `50% ${windowYOffset / 2}px`;
         // element.style['transform'] = `rotate(${windowYOffset*4}deg)`;
+      };
+      window.onresize = function() {
+        let elements = document.getElementsByClassName("col-sm-6");
+        if (elements.length != 8) alert("Please stop messing with the page!");
+        else {
+          elements[1].style["height"] = `${elements[0].clientHeight}px`;
+          elements[2].style["height"] = `${elements[3].clientHeight}px`;
+          elements[5].style["height"] = `${elements[4].clientHeight}px`;
+          elements[6].style["height"] = `${elements[7].clientHeight}px`;
+        }
       };
       function WidthChange(mq) {
         let element = document.getElementsByClassName("parallax")[0];
@@ -85,11 +105,12 @@
       body {
         font-family: Montserrat, sans-serif;
         /* background: #4a1757; */
-        background: #2f0366;
+        background: #1c0459;
       }
       .bg-1 {
         padding-top: 15px;
         padding-bottom: 30px;
+        color: white;
       }
       .container {
         color: white;
@@ -151,8 +172,14 @@
         padding-right: 60px;
         color: white;
       }
-
+      .textBorder {
+        border: 20px solid transparent;
+        box-shadow: inset 0px 0px 0px 5px white; // #e39dd2;
+      }
       .bodyText {
+        position: relative;
+        top: 50%;
+        transform: perspective(1px) translateY(-60%);
         padding-left: 15%;
         padding-right: 15%;
         font-family: Montserrat, sans-serif;
@@ -160,12 +187,37 @@
         font-size: 150%;
       }
       .bodyText1 {
+        position: relative;
+        top: 50%;
+        transform: perspective(1px) translateY(-60%);
         padding-left: 15%;
         padding-right: 15%;
-        margin-top: 20px;
         font-family: Montserrat, sans-serif;
         color: white;
         font-size: 150%;
+      }
+      .bodyText2 {
+        padding-left: 15%;
+        padding-right: 15%;
+        font-family: Montserrat, sans-serif;
+        color: white;
+        font-size: 150%;
+      }
+      @media screen and (min-width: 767px) {
+        .bodyText {
+          font-size: 120%;
+        }
+        .bodyText1 {
+          font-size: 120%;
+        }
+      }
+      @media screen and (min-width: 991px) {
+        .bodyText {
+          font-size: 170%;
+        }
+        .bodyText1 {
+          font-size: 170%;
+        }
       }
       .grey {
         -webkit-filter: grayscale(30%); /* Safari 6.0 - 9.0 */
@@ -196,32 +248,66 @@
         border-color: transparent;
       }
       .btn {
-        background-color: #1c074e;
-        color: white;
+        /* background-color: #190645; */
+        background-color: #6432cf;
+        box-shadow: 5px 4px 1px #161616;
+        /* background-color: #c27caf; */
+        color: #dfdfdf;
         padding: 14px 28px;
         font-size: 16px;
         cursor: pointer;
         margin-left: 0px;
         margin-bottom: 15px;
-        width: 100%;
-        box-shadow: rgba(36, 2, 70, 0.5) 0 0 3px 3px;
+        width: 44%;
+        margin: 0 3% 20px 3%;
+        float: left;
       }
 
       .btn:hover {
         background-color: white;
         color: black;
-        box-shadow: rgba(255, 255, 255, 1) 0 0 3px 3px;
       }
-      .centerBox {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 100%;
-        margin-left: -50%;
-        /* margin-top: -50%; */
+
+      .btn.hackab:hover {
+        /* background-color: #1c0357; /* Green */
+        color: white;
       }
-      .col-sm-6 img {
-        box-shadow: rgba(36, 2, 70, 1) 0 0 5px 5px;
+
+      .btn.hackab:hover span {
+        display: none;
+      }
+
+      .btn.hackab:hover:before {
+        content: "Registration is closed";
+        color: black;
+      }
+
+      .btn.btn1 {
+        /* background-color: #190645; */
+        background-color: #6432cf;
+        box-shadow: 5px 4px 1px #161616;
+        /* background-color: #c27caf; */
+        color: #dfdfdf;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 60px 10% 10px 10%;
+        width: 80%;
+        float: left;
+      }
+
+      .btn1:hover {
+        background-color: white;
+        color: black;
+      }
+
+      .col-sm-6.padding-0 {
+        overflow: auto;
+      }
+
+      .row {
+        margin-left: 0;
+        margin-right: 0;
       }
     </style>
   </head>
@@ -242,7 +328,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a href="./index.html">Home</a></li>
           <li class="active"><a href="./events.html">Events</a></li>
-          <li><a href="./archive.html">Archive</a></li>
+          <!-- <li><a href="./archive.html">Archive</a></li> -->
           <li><a href="./sponsors.html">Sponsors</a></li>
           <li><a href="./about.html">About</a></li>
           <li><a href="./register.html">Register!</a></li>
@@ -254,45 +340,36 @@
     <div class="parallax"></div>
     <div class="container">
       <div class="bg-1">
-        <!-- quick bios-->
-        <h2 class="text-center bodyText">
+        <h2 class="text-center bodyText2">
           We hope you can enjoy all of the events we offer, and find a place
           where you can have fun and maybe learn a thing or two!
         </h2>
       </div>
-      <a href="#ABCIC" class="btn"
-        >Acton Boxborough Competition of Informatics and Computation</a
-      >
-      <a href="#HackAB" class="btn">HackAB</a>
+      <a href="#ABCIC" class="btn">ABCIC</a>
+      <a href="" style="text-decoration:none; cursor: not-allowed;"class="btn hackab"><span>HackAB</span></a>
 
       <div class="row" id="ABCIC">
         <div class="col-sm-6 padding-0">
           <img src="./Assets/ABCICrotated.png" style="width:100%" />
         </div>
-        <div class="col-sm-6 padding-0">
-          <div class="centerBox">
-            <p class="text-center bodyText1">
-              ABCIC - Acton Boxborough Competition of Informatics and
-              Computation
-            </p>
+        <div class="col-sm-6 padding-0 textBorder">
+          <p class="text-center bodyText1">
+            ABCIC - Acton Boxborough Competition of Informatics and Computation
             <br />
-            <p class="text-center bodyText1">
-              A fusion of USACO problem styles, with the in-person math
-              competition format.
-            </p>
-          </div>
+            <br />
+            A fusion of USACO problem styles, with the in-person math
+            competition format.
+          </p>
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-6 padding-0 bg-1 height100">
+        <div class="col-sm-6 padding-0 bg-1 textBorder">
           <br />
           <p class="text-center bodyText">
-            ABCIC - Acton Boxborough Competition of Informatics and Computation
-          </p>
-          <br />
-          <p class="text-center bodyText">
-            A fusion of USACO problem styles, with the in-person math
-            competition format.
+            Problem Format
+            <br />
+            <br />
+            Problems will be a prompt describing the dilemma, and then you will write code to take in data, process it, and give the correct output.
           </p>
         </div>
         <div class="col-sm-6 padding-0">
@@ -301,41 +378,35 @@
       </div>
       <div class="row">
         <div class="col-sm-6 padding-0">
-          <img src="./Assets/ABCICframe.png" style="width:100%" />
+          <img src="./Assets/ABCICDate.png" style="width:100%" />
         </div>
-        <div class="col-sm-6 padding-0 height100">
+        <div class="col-sm-6 padding-0 height100 textBorder">
           <br />
           <p class="text-center bodyText1">
-            ABCIC - Acton Boxborough Competition of Informatics and Computation
-          </p>
-          <br />
-          <p class="text-center bodyText1">
-            A fusion of USACO problem styles, with the in-person math
-            competition format.
+            ABCIC Date
+            <br />
+            <br />
+            ABCIC will be held on December 14th, 2019! Come join us!
           </p>
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-6 padding-0 bg-1 height100">
+        <div class="col-sm-6 padding-0 textBorder">
           <br />
           <p class="text-center bodyText">
-            ABCIC - Acton Boxborough Competition of Informatics and Computation
-          </p>
-          <br />
-          <p class="text-center bodyText">
-            A fusion of USACO problem styles, with the in-person math
-            competition format.
+            Schedule - Day of event
+            <br />
+            <br />
+            The schedule is to be determined!
+            <br />
+            Stay tuned for updates!
           </p>
         </div>
-        <div class="col-sm-6 padding-0 bg-black height100">
-          <h2
-            class="text-center bodyText"
-            style="padding-top:110px;font-size:300%"
-          >
-            Schedule
-          </h2>
+        <div class="col-sm-6 padding-0">
+          <img src="./Assets/ABCICSchedule.png" style="width:100%" />
         </div>
       </div>
+      <a href="register.html" class="btn btn1" style="font-size:170%;font-weight:1000;font-family:Montserrat">Register for ABCIC Now!</a>
     </div>
     <!-- contact -->
     <div id="contact" class="container-fluid bg-1">
