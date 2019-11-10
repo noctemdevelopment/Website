@@ -21,6 +21,29 @@
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script>
+      window.onload = function() {
+        if (matchMedia) {
+          const mq = window.matchMedia("(max-width: 767px)");
+          mq.addListener(WidthChange);
+          WidthChange(mq);
+        } // media query change function
+      };
+      function WidthChange(mq) {
+        let navbar = document.getElementsByClassName("navbar")[0];
+        if (mq.matches) {
+          navbar.style["opacity"] = 1;
+          if(!document.getElementById("nonMobile")) {
+            let node = document.createElement("p")
+            node.appendChild(document.createTextNode("Mobile is not currently supported"))
+            node.setAttribute("id", "nonMobile");
+            document.getElementsByClassName("navbar-header")[0].appendChild(node)
+          }
+        } else {
+          navbar.style["opacity"] = 0.87;
+        }
+      }
+    </script>
     <style>
       html {
         scroll-behavior: smooth;
@@ -163,6 +186,12 @@
       .sponsors > img{
         width: 800px;
         padding: 20px;
+      }
+      #nonMobile {
+        margin-top: 20px;
+        margin-left: 20px;
+        color: white;
+        font-weight: bolder;
       }
     </style>
   </head>

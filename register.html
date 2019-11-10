@@ -45,6 +45,12 @@
         if (mq.matches) {
           navbar.style["opacity"] = 1;
           element.style["margin-top"] = `${navbar.offsetHeight}px`;
+          if(!document.getElementById("nonMobile")) {
+            let node = document.createElement("p")
+            node.appendChild(document.createTextNode("Mobile is not currently supported"))
+            node.setAttribute("id", "nonMobile");
+            document.getElementsByClassName("navbar-header")[0].appendChild(node)
+          }
         } else {
           navbar.style["opacity"] = 0.87;
           element.style["margin-top"] = 0;
@@ -100,6 +106,12 @@
       }
       .navbar-default .navbar-toggle {
         border-color: transparent;
+      }
+      #nonMobile {
+        margin-top: 20px;
+        margin-left: 20px;
+        color: white;
+        font-weight: bolder;
       }
     </style>
   </head>
